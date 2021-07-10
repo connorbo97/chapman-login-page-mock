@@ -14,7 +14,7 @@ function App() {
   return (
     <div className={styles["App"]}>
       <header className={styles["App-header"]}>
-+       <img src={Logo} className={styles["App-logo"]} alt="logo" />
+       <img src={Logo} className={styles["App-logo"]} alt="logo" />
         <p>
           Page has been open for <code>{count}</code> seconds.
         </p>

@@ -4,9 +4,16 @@ export default {
     public: '/',
     src: '/dist',
   },
+  alias: {
+  },
   plugins: [
     '@snowpack/plugin-react-refresh',
-    '@snowpack/plugin-sass',
+    [
+      'snowpack-sass-compiler',
+      {
+        includePaths: ['./src']
+      },
+    ],
     '@snowpack/plugin-babel',
     "@snowpack/plugin-postcss"
   ],

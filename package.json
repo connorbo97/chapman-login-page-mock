@@ -24,7 +24,8 @@
   "dependencies": {
     "live-server": "^1.2.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "snowpack-sass-compiler": "^1.0.6"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
