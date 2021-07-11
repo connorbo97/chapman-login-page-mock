@@ -1,24 +1,32 @@
 import React, {useState, useEffect} from 'react';
-import Logo from './logo.svg';
+import Logo from './img/red-white-logo.png';
 import styles from './App.module.scss';
 
 function App() {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Update the count (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
   return (
-    <div className={styles["App"]}>
-      <header className={styles["App-header"]}>
-       <img src={Logo} className={styles["App-logo"]} alt="logo" />
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-      </header>
+    <div className={styles["app"]}>
+      <div className={styles["grid"]}>
+        <div className={styles["rail"]}>
+          <img src={Logo} altText={'logo'} />
+          <div className={styles["help-text"]}>
+            <h3>Need Help?</h3>
+            <h4>Chapman Service Desk</h4>
+            <p>Assistance available Monday-Friday<br/>8:00AM-5:00PM<br/><br/> Contact us:<br></br>(714) 997-6600<br/><a href="#">Chapman University Service Desk</a></p>
+          </div>
+        </div>
+        <div className={styles["content"]}>
+          <form>
+            <h1>Student Login Portal</h1>
+            <div className={styles['form-fields']}>
+              <label htmlFor="username">Username</label>
+              <input type="text" name="username" tabIndex={0} />
+              <label htmlFor="password">Password</label>
+              <input type="password" name="username" tabIndex={0} />
+              <button tabIndex={0}>Log In</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

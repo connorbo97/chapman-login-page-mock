@@ -1,7 +1,9 @@
-$colorPrimary: #A50034;
+$colorPrimary: #A40033;
 $colorSecondary: #231F20;
 $colorTertiary: #DDCBA4;
 $colorAccent: #6E6259;
+
+$white-1: #FFF;
 
 $fontPrimary: 'Open Sans', sans-serif; 
 $fontSecondary: 'PT Sans', sans-serif; 
@@ -9,4 +11,5 @@ $fontSecondary: 'PT Sans', sans-serif;
 
 html, body {
     font-family: $fontPrimary;
+    background-color: $colorTertiary;
 }

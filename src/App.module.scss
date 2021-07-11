@@ -1,8 +1,191 @@
-@import 'index';
+@import './index.scss';
 
-.App {
+$maxWidth: 120rem;
+$whitespaceExtraExtraSmall: 1rem;
+$whitespaceExtraSmall: 2rem;
+$whitespaceSmall: 5rem;
+$whitespaceLarge: 10rem;
+$railWidth: 40rem;
+
+.app {
+  padding: $whitespaceSmall;
+  position: relative;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: [rail-start] $railWidth [rail-end content-start] 1fr [content-end];
+  grid-template-rows: 1fr;
+  
+  overflow: hidden;
+  border-radius: 10px;
+  min-height: 100%;
+  background-color: $colorTertiary;
+}
+
+.rail {
+  grid-column-start: rail-start;
+  grid-column-end: rail-end;
+
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+
+  background-color: $colorPrimary;
+
+  img {
+    width: 100%;
+    padding: $whitespaceExtraSmall;
+    // box-shadow: 6px 0px 7px black;
+  }
+
+  .help-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    color: $white-1;
+    font-family: $fontSecondary;
+    text-align: center;
+    padding: $whitespaceExtraSmall;
+
+    h3 {
+      text-decoration: underline;
+      padding: $whitespaceExtraExtraSmall;
+    }
+  }
+}
+
+@keyframes background-pan {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.content {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+
+  background-color: $colorAccent;
+  background-image: url('dist/img/school.jpg');
+  animation: background-pan 100s linear alternate infinite;
+  // animation-iteration-count: infinite;
+
+  padding: $whitespaceLarge;
   text-align: center;
+  color: $colorSecondary;
 
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin:auto;
+    padding: $whitespaceSmall;
+    background-color: rgba($colorTertiary, 1);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin: $whitespaceExtraExtraSmall 0;
+      font-family: $fontSecondary;
+
+      // .form-inputs {
+      //   flex: 1;
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: center;
+
+      // }
+    }
+
+    h1 {
+      border-bottom: 3px solid $colorAccent;
+    }
+
+    label {
+      display: block;
+      font-size: 3rem;
+      padding: $whitespaceExtraExtraSmall 0;
+    }
+  
+    input {
+      display: block;
+      border: 1px solid $colorAccent;
+      font-size: 3rem;
+    }
+  
+    button {
+      margin-top: $whitespaceSmall;
+      padding:  $whitespaceExtraExtraSmall $whitespaceExtraSmall;
+      color: $white-1;
+      background-color: $colorPrimary;
+      border: 0;
+  
+      border-radius: 5px;
+  
+    }
+
+  }
+
+  // form {
+  //   flex: 1;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: flex-start;
+  //   .form-inputs {
+  //     flex: 1;
+  //   }
+  // }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
   p {
     margin: 0.4rem;
   }
@@ -23,7 +206,8 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: $colorPrimary;
+    // color: $colorPrimary;
+    color: red;
   }
 
   @keyframes App-logo-spin {
